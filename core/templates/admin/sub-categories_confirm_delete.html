@@ -1,0 +1,29 @@
+{% extends 'admin/base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+    Delete | amazon
+ {% endblock title %}
+
+ {% block page_title %}
+   Delete subcategory
+ {% endblock page_title %}
+
+
+
+
+{% block page_content %}
+   <div class="content-section ml-5">
+        <form method="POST" >
+            {% csrf_token %}
+                <fieldset class=" form-group">
+                    <h5>Are you sure to delete this subcategory: {{object.title}}?</h5>
+                </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes</button>
+                <a class="btn btn-outline-info" href="{% url 'sub_category_detail' object.id %}">No</a>
+            </div>
+
+        </form>
+    </div>
+{% endblock page_content %}

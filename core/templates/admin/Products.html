@@ -1,0 +1,30 @@
+{% extends 'admin/base.html' %}
+      {% block title %}
+        Products | Amazon
+      {% endblock title %}
+
+    {% block page_title %}
+        Products
+    {% endblock page_title %}
+    {% block page %}
+        <a href="{% url 'product_create' %}" class="btn btn-outline-primary">Create a product</a>
+    {% endblock page %}
+{% block page_content %}
+   <ol class="list-group list-group-numbered ">
+    {% for product in object_list %}
+          <li class="list-group-item col-8 ml-5">
+            <div class="ms-2 d-flex align-items-center justify-content-between">
+              <div > <strong>{{ forloop.counter }}.</strong>
+
+                  <a  href="{% url 'product_detail' product.id %}">{{ product.title}}</a>
+              </div>
+                <div style="display:flex">
+                    <a  href="{% url 'product_update' product.id %}" class="btn ml-auto">Update</a>
+                    <a  href="{% url 'product_delete' product.id %}" class="btn ml-auto">Delete</a>
+                </div>
+            </div>
+          </li>
+
+    {% endfor%}
+    </ol>
+{% endblock page_content %}

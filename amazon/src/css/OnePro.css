@@ -1,0 +1,45 @@
+.oneproduct{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* height: 550px; */
+    margin: 20px;
+    margin-bottom: 0;
+    max-width: 300px;
+
+}
+
+.oneproduct>img{
+    max-width: 250px;
+}
+
+.price{
+    font-size: 25px;
+}
+
+.price>small{
+    position: relative;
+    bottom: 5px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:hover{
+    color: black;
+}
+.oneproduct_title:hover{
+    color: rgb(243, 14, 14);
+}
+
+
+
+
+
+
+
+
+
+
+

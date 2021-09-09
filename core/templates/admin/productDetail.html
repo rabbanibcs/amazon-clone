@@ -1,0 +1,30 @@
+{% extends 'admin/base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+Detail | amazon
+ {% endblock title %}
+
+ {% block page_title %}
+   Detail
+ {% endblock page_title %}
+{% block page %}
+    <a href="{% url 'product_delete' object.id %}" class="btn btn-outline-primary">Delete product</a>
+    <a href="{% url 'product_update' object.id %}" class="btn btn-outline-primary">Update product</a>
+{% endblock page %}
+
+{% block page_content %}
+<div class="col-8 ml-5">
+        <h5 class="card-title">{{object.title}}</h5>
+          <img src={{object.image_url}}>
+        <p class="card-text">
+    {{object.description|striptags}}
+        </p>
+        <p class="card-text">price: ${{object.price}}</p>
+        <p class="card-text">rating: {{object.rating}}</p>
+        <p class="card-text">created: {{object.created_at}}</p>
+
+
+</div>
+
+{% endblock page_content %}

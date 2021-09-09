@@ -1,0 +1,158 @@
+.signin{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.signin__logo{
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.signin__logo>img{
+    margin: 0 auto;
+    width: 100px;
+}
+.signin__inner{
+    width: 340px;
+    margin: 15px auto;
+    /* height: 280px; */
+    border: 1px solid rgb(231, 217, 217);
+    border-radius: 3px;
+    padding: 20px 25px;
+}
+.signin__inner>h1{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.signin__inner>p{
+    font-size: 12px;
+}
+.signin__inner>p>a{
+    text-decoration: none;
+}
+input[type=email]{
+    height: 30px;
+    border: 1px solid rgb(151, 136, 136);
+    width:100%;
+}
+input[type=password]{
+    height: 30px;
+    border: 1px solid rgb(151, 136, 136);
+    width:100%;
+}
+input[type=button]{
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #f0c14b;
+    border: 1px solid rgb(136, 120, 120);
+    font-size: 14px;
+    height: 30px;
+}
+.email>input[type=button]:hover{
+ 
+    background-color: #e0b33f;
+    
+}
+input[type=button]:hover{
+ 
+    background-color: #e0b33f;
+    
+}
+input[type=email]:focus-within{
+    outline: none;
+    box-shadow: -1px 0px 3px 2px rgba(187, 207, 8, 0.73);   
+}
+input[type=password]:focus-within{
+    outline: none;
+    box-shadow: -1px 0px 3px 2px rgba(187, 207, 8, 0.73);   
+}
+.email__error{
+    color: red;
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
+}
+.register_link{
+    width: 340px;
+    margin: 25px auto;
+    border-radius: 3px;
+    position: relative;
+}
+.register_link>p{
+    text-align: center;
+    font-size: 12px;
+    color: #767676;
+    font-weight: 400;
+    position: absolute;
+    top:-13px;
+    left: 120px;
+    background-color: white;
+    padding: 5px;
+}
+
+.creat_account>input{
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background: #e7e9ec;
+    border: 1px solid #adb1b8;
+    font-size: 13px;
+    height: 30px;
+}
+.creat_account>input:hover{
+  
+    background: #d0d4da;
+   
+}
+#Forgot-your-Password{
+    margin-left: 109px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+.email>h6{
+    font-weight: bold;
+    font-size: 12px;
+}
+.password>h6{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

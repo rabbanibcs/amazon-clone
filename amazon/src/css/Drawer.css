@@ -1,0 +1,61 @@
+
+.drawer{
+    width: 365px;
+    position: relative;
+}
+.drawer__header{
+    padding-left: 26px;
+
+    height: 50px;
+    background-color: #232F40;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.drawer__header>h4{
+    color: white;
+    font-size: 19px;
+    padding-left: 10px;
+}
+.drawer__inner{
+    padding-left: 26px;
+    padding-top: 13px;
+
+}
+.drawer>h6{
+    margin-bottom: 16px;
+
+}
+.drawer>p{
+    font-size: 14px;
+}
+.avater{
+    font-size: 50px;
+}
+.drawer__cross{
+    font-size: 50px;
+    color: white;
+    position: fixed;
+    left: 370px;
+    top: -20px;
+    cursor: pointer;
+
+}
+
+.drawer__link{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

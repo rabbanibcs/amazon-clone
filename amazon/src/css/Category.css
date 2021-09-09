@@ -1,0 +1,43 @@
+.category{
+    margin: 10px 20px;
+    background-color: white;
+    padding: 15px;
+    height: 280px;
+    max-width: 1460px;
+    /* min-width: 1000px; */
+
+}
+.category__span{
+    font-size: 14px;
+    color: grey;
+}
+
+.category__photos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+   
+
+}
+.category__photos::-webkit-scrollbar {
+    height: 8px;
+    background-color: transparent;
+
+  }
+  
+.category__photos::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: transparent;
+
+}
+.category__photos:hover::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+.category__photos>img{
+    margin: 0 20px 0 20px;
+   
+}
+
+

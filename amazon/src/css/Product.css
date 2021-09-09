@@ -1,0 +1,51 @@
+.product__row{
+    max-width: 1500px;
+    display: flex;
+
+}
+
+
+.product{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    margin: 20px 10px;
+    padding: 20px;
+    width: 25%;
+}
+.product>h4{
+    margin-right: auto;
+}
+
+.product>small{
+    color: #007185;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-right: auto;
+
+
+}
+
+.product>img{
+    width: 100%;
+   height: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

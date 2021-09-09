@@ -1,0 +1,63 @@
+
+.products__sidebar>p{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.products__sidebar{
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-right: 1px solid #ddd;
+
+
+}
+.products__sidebar__link{
+    text-decoration: none;
+    color: black;
+
+}
+.products__sidebar__link p{
+
+    margin: 0;
+    padding: 0;
+}
+.products{
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+
+}
+
+.products__row{
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: flex-end;
+    max-width: 1200px;
+}
+
+.products__sidebar>p:hover{
+    color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

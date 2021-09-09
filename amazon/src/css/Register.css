@@ -1,0 +1,113 @@
+.register{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.register__logo{
+    width: 100px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.register__logo>img{
+    margin: 0 auto;
+    width: 100px;
+}
+
+.register__inner{
+    width: 340px;
+    margin: 15px auto;
+    border: 1px solid rgb(231, 217, 217);
+    border-radius: 3px;
+    padding: 20px 25px;
+}
+.register__inner>h1{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.register__inner>p{
+    font-size: 12px;
+    
+}
+.register__inner>h6{
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.register__inner>input[type=text]{
+    height: 30px;
+    border: 1px solid rgb(151, 136, 136);
+    width:100%;
+}
+.register__inner>input[type=text]:hover{
+    box-shadow: -1px 0px 3px 2px rgba(187, 207, 8, 0.73);   
+
+}
+.register__inner>input[type=email]{
+    height: 30px;
+    border: 1px solid rgb(151, 136, 136);
+    width:100%;
+}
+
+.register__inner>input[type=password]{
+    height: 30px;
+    border: 1px solid rgb(151, 136, 136);
+    width:100%;
+}
+.register__inner>input[type=password]::placeholder{
+    font-size: 12px;
+    padding-left: 10px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

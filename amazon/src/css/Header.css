@@ -1,0 +1,138 @@
+.header{
+    height: 60px;
+    min-width: 1500px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: black;
+}
+
+.header__logo{
+    height: 100%;
+    margin-right: 10px;
+    padding-top: 5px; 
+
+
+}
+.header__logo__link{
+    height: 100%;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid black;
+
+}
+.header__logo__link:hover{
+    border: 2px solid white;
+}
+.header__option__start{
+    display: flex;
+    align-items: center;
+}
+
+.header__option{   
+    color: white;
+    padding: 3px;
+    margin-right: 10px;
+    border: 2px solid black;
+    text-decoration: none;
+
+}
+.header__option:hover{
+    border: 2px solid white;
+    color: white;
+}
+.header__option>p{
+    font-size: 12px;
+    height: 12px;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.header__option>h4{
+    font-size: 16px;
+
+}
+.header__search{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.header__search>input{
+    flex: 1;
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 44px!important;
+    border:none;
+    font-size: 20px;
+    padding-left: 10px;
+
+}
+.header__search:focus-within{
+    border-radius: 5px;
+    box-shadow: -1px 0px 3px 4px rgba(187, 207, 8, 0.73);   
+}
+.header__search__icon{
+    background-color: orange;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 44px!important;
+    width: 44px!important;
+    padding: 5px;
+
+}
+.header__option__end{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:3px;
+    border: 2px solid black;
+    text-decoration: none
+
+
+}
+.header__option__end:hover{
+    color: white;
+    border: 2px solid white;
+    
+}
+
+.header__option__cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__option__cart>p{
+    height: 22px;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__option__cart>h4{
+    /* height: 16px; */
+    font-size: 16px;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+{% extends 'admin/base.html' %}
+      {% block title %}
+        Categories | Amazon
+      {% endblock title %}
+
+    {% block page_title %}
+        Categories
+    {% endblock page_title %}
+    {% block page %}
+        <a href="{% url 'category_create' %}" class="btn btn-outline-primary">Create a category</a>
+    {% endblock page %}
+{% block page_content %}
+   <ol class="list-group list-group-numbered ">
+    {% for category in object_list %}
+          <li class="list-group-item col-6 ml-5">
+            <div class="ms-2 d-flex align-items-center justify-content-between">
+              <div > <strong>{{ forloop.counter }}.</strong>
+
+                  <a  href="{% url 'category_detail' category.id %}">{{ category.title}}</a>
+              </div>
+                <div><a  href="{% url 'sub_categories_pk' category.id %}" class="link text-muted">Subcategories</a><a  href="{% url 'category_delete' category.id %}" class="btn ml-auto">Delete</a></div>
+            </div>
+          </li>
+
+    {% endfor%}
+    </ol>
+{% endblock page_content %}

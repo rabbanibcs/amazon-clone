@@ -1,0 +1,96 @@
+.detail{
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.detail__left{
+    flex: 3;
+    /* border-bottom: 1px solid #ddd; */
+
+    /* height: 80vh; */
+    margin-top: 100px;
+}
+.detail__left>img{
+    width: 480px;
+}
+.detail__center{
+    flex: 2;
+    /* border-bottom: 1px solid #ddd; */
+
+    margin: 50px 20px 0px 20px;
+    height: 100vh;
+
+}
+.detail__center__rating{
+    border-bottom: 1px solid #ddd;
+
+}
+.detail__right{
+    flex: 1;
+    height: 50vh;
+    /* background-color: rgb(75, 64, 45); */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 50px 0px 0px 0px;
+    padding: 20px;
+
+
+}
+.detail__right__select{
+    display: flex;
+    border: 1px solid #ddd;
+    width: 85px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-left: 5px;
+
+}
+.detail__right__select:hover{
+    border: 1px solid blue;
+
+}
+.quantity{
+    border:0px;
+    height: 25px;
+}
+
+.sizes{
+
+    display: flex;
+}
+.sizes>p{
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-right: 10px;
+}
+.button{
+    display: flex;
+    flex-direction: column;
+}
+.button>input{
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: orange;
+    padding: 5px;
+    border:none;
+
+    /* outline: none; */
+}
+.button>input:hover{
+    background-color: rgb(185, 197, 18);
+
+}
+
+.detail__right p{
+   margin-bottom: 5px;
+}
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'admin/base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+Detail | amazon
+ {% endblock title %}
+
+ {% block page_title %}
+   Subcategory Detail
+ {% endblock page_title %}
+{% block page %}
+    <a href="{% url 'sub_category_delete' object.id %}" class="btn btn-outline-primary">Delete subcategory</a>
+{% endblock page %}
+
+{% block page_content %}
+<div class="col-8 ml-5">
+    <div class="card" style="width: 14rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{object.title}}</h5>
+        <p class="card-text">
+            {{object.description|striptags}}
+        </p>
+        <p class="card-text">{{object.created_at}}</p>
+
+      </div>
+    </div>
+
+</div>
+
+{% endblock page_content %}

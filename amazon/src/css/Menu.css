@@ -1,0 +1,53 @@
+.menu{
+    background-color: #232f3e;
+    height: 44px;
+    color: white;
+    display: flex;
+    align-items: center;
+    min-width: 1500px;
+    padding-left: 18px;
+
+}
+
+.menu__option{
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+.nemu__all{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0px 5px 0px 5px;
+}
+.menu>h6:hover{
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

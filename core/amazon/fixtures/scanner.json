@@ -1,0 +1,32 @@
+[
+  {
+    "pk": 1,
+    "model": "amazon.Products",
+"fields": {
+    "title": "Fujitsu ScanSnap iX1400 Simple One-Touch Button Document Scanner for Mac or PC, Black",
+    "rating": 4.7,
+    "price": 349.99,
+    "image_url": "https://m.media-amazon.com/images/I/81KJ6yZb59L._AC_UY218_.jpg",
+    }
+  },
+  {
+    "pk": 2,
+"model": "myapp.person",
+"fields": {
+    "title": "Xerox XD-COMBO Duplex Combo Flatbed Document Scanner for PC and Mac, Automatic Document Feeder (ADF)",
+    "rating": 4.2,
+    "price": 259.99,
+    "image_url": "https://m.media-amazon.com/images/I/61d5wj9FDPL._AC_UY218_.jpg",
+    }
+  },
+  {
+    "pk": 3,
+"model": "myapp.person",
+"fields": {
+    "title": "Brother Wireless Document Scanner, ADS-1700W, Fast Scan Speeds, Easy-to-Use, Ideal for Home, Home Office or On-the-Go Professionals (ADS1700W), white",
+    "rating": 4.3,
+    "price": 269.98,
+    "image_url": "https://m.media-amazon.com/images/I/71xlWzVC5FL._AC_UY218_.jpg",
+    }
+  }
+]
