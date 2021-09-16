@@ -1,4 +1,4 @@
-import './css/OnePro.css'
+import '../css/OnePro.css'
 import React from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import { Link} from "react-router-dom";

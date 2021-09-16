@@ -21,12 +21,13 @@
   <body>   
     <div class="container__center">
       <div class="container ">
+        
+        <section id="content">
         {%if messages %}
         {% for message in messages %}
-        <p>{{message}}</p>
+        <p class='login_error'>{{message}}</p>
         {% endfor %}
         {% endif %}
-        <section id="content">
           <form action="{% url 'admin_login_success' %}" method='POST'>
             {%csrf_token%}
             <h1>Login</h1>

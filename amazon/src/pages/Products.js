@@ -1,6 +1,6 @@
-import './css/Products.css'
+import '../css/Products.css'
 import React,{useEffect,useState} from 'react'
-import OnePro from './OnePro'
+import OnePro from '../components/OnePro'
 import {useParams,Link} from "react-router-dom";
 import axios from 'axios';
 

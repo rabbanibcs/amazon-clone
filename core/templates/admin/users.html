@@ -1,12 +1,20 @@
 {% extends 'admin/base.html'%}
+{% load static %}
+{% block custom_css %}
+  <link rel="stylesheet" href="{% static '/css/user_page_style.css' %}">
 
+{% endblock custom_css %}
 {% block page_content %}
+<div style="" class="user_header">
+    <p class="id">Id</p><p class="name">Name</p>
+    <p class="email">Email</p>
+    <p class="delete">Action</p>
+</div>
     {%for user in users %}
-<div style="display:flex;">
-    <p>Id: {{user.id}}</p><p>Name: {{user.name}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>{{user.token.key}}</p>
-    <a href="{% url 'delete_user' user.id %}">delete</a>
+<div class="user_header">
+    <p class="id">{{user.id}}</p><p class="name">{{user.name}}</p>
+    <p class="email">{{user.email}}</p>
+    <a class="delete" href="{% url 'delete_user' user.id %}">delete</a>
 </div>
 
 

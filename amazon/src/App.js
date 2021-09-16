@@ -1,17 +1,17 @@
 import './css/App.css';
-import Header from './Header';
-import Menu from './Menu'
-import Home from "./Home";
-import Products from './Products';
-import ProductDetail from './ProductDetail';
-import Drawer from './Drawer';
+import Header from './components/Header';
+import Menu from './components/Menu'
+import Home from "./pages/Home";
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
+import Drawer from './components/Drawer';
 import React,{useState} from 'react'
 import {BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
-import Cart from './Cart';
-import EmptyCart from './EmptyCart'
+import Cart from './pages/Cart';
+import EmptyCart from './pages/EmptyCart'
 import { useContextValue } from './ContextProvider';
-import Signin from './Signin';
-import Register from './Register';
+import Signin from './pages/Signin';
+import Register from './pages/Register';
 
 function App() {
   const [open, setOpen] = useState(false)

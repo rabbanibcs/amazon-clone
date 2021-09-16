@@ -1,9 +1,9 @@
-import './css/Productdetail.css'
+import '../css/Productdetail.css'
 import React,{useEffect,useState} from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import {useParams} from "react-router-dom";
 import axios from 'axios';
-import { useContextValue } from './ContextProvider';
+import { useContextValue } from '../ContextProvider';
 
 export default function ProductDetail() {
     const [product, setProduct] = useState({})

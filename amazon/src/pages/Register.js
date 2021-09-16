@@ -1,11 +1,14 @@
 import React,{useState,useRef} from 'react'
-import './css/Register.css'
-import logo from './images/amazon-logo.jpg'
+import '../css/Register.css'
+import logo from '../images/amazon-logo.jpg'
 import validator from 'validator'
 import axios from 'axios';
-import {useContextValue} from './ContextProvider'
+import {useContextValue} from '../ContextProvider'
+import { useHistory } from "react-router-dom";
 
 export default function Register() {
+    let history = useHistory();
+
     const {currentUser,setCurrentUser}=useContextValue()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -41,7 +44,9 @@ export default function Register() {
                 setCurrentUser(res.data.user)
                 emailErr.current.style.display='none';
                 passwordErr.current.style.display='none';
-                console.log(JSON.stringify(currentUser));})
+                console.log(JSON.stringify(currentUser));
+                history.push("/");
+            })
             .catch((err)=>console.log(err));
             
             console.log('user registered')

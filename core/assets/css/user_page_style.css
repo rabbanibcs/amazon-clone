@@ -1,0 +1,52 @@
+.user_header{
+display:flex;
+height:30px;
+/* background-color: blueviolet; */
+font-size: 20px;
+width:700px;
+margin-bottom: 2px;
+}
+.user_header>p{
+    margin: 0 15px;
+}
+.user_header>a{
+    margin: 0 15px;
+}
+.id{
+    width:20px;
+}
+.name{
+    width:250px;
+}
+.email{
+    width:250px;
+}
+.delete{
+    width:50px;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

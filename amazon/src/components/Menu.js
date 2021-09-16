@@ -1,4 +1,4 @@
-import './css/Menu.css'
+import '../css/Menu.css'
 import React from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 export default function Menu({controlDrawer}) {

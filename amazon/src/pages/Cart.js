@@ -1,7 +1,7 @@
-import './css/Cart.css';
+import '../css/Cart.css';
 import React,{useLayoutEffect,useState} from 'react'
-import CartItem from './CartItem';
-import { useContextValue } from './ContextProvider';
+import CartItem from '../components/CartItem';
+import { useContextValue } from '../ContextProvider';
 
 export default function Cart() {
     const [cart, setCart] = useState()

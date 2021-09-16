@@ -1,10 +1,10 @@
-import './css/Header.css'
+import '../css/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import React from 'react'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import { Link} from "react-router-dom";
-import { useContextValue } from './ContextProvider';
+import { useContextValue } from '../ContextProvider';
 
 export default function Header() {
     const {cartTotal,setCartTotal,currentUser}=useContextValue()

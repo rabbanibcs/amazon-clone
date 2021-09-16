@@ -1,17 +1,17 @@
 from django.db import models
 from django.urls import reverse
 
-from admin.models import MerchantUser
+# from admin.models import MerchantUser
 
 
 class Categories(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(default='',blank=True)
+    description = models.TextField(default='', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return reverse("categories",kwargs={})
+        return reverse("categories", kwargs={})
 
     def __str__(self):
         return self.title
@@ -25,100 +25,31 @@ class SubCategories(models.Model):
     is_active = models.IntegerField(default=1)
 
     def get_absolute_url(self):
-        return reverse("sub_categories",kwargs={})
+        return reverse("sub_categories", kwargs={})
 
     def __str__(self):
         return self.title
 
+    def create_product(self, product):
+        Products.objects.create(subcategories_id=self.id, title=product.title, price=product.price,\
+                                image_url=product.image_url, rating=product.rating)
+
 
 class Products(models.Model):
-    subcategories_id=models.ForeignKey(SubCategories,on_delete=models.CASCADE, verbose_name='category')
-    title=models.CharField(max_length=255)
-    brand=models.CharField(max_length=255,default='',blank=True)
-    price=models.CharField(max_length=255)
-    product_description=models.TextField(default='',blank=True)
-    image_url=models.URLField()
-    rating=models.DecimalField(default=5.00, max_digits=3,decimal_places=2)
-    created_at=models.DateTimeField(auto_now_add=True)
+    subcategories_id = models.ForeignKey(SubCategories, on_delete=models.CASCADE, verbose_name='category')
+    title = models.CharField(max_length=255)
+    brand = models.CharField(max_length=255, default='', blank=True)
+    price = models.CharField(max_length=255)
+    product_description = models.TextField(default='', blank=True)
+    image_url = models.URLField()
+    rating = models.DecimalField(default=5.00, max_digits=3, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
     # added_by_merchant=models.ForeignKey(MerchantUser,on_delete=models.CASCADE)
-    in_stock_total=models.IntegerField(default=1)
-    is_active=models.IntegerField(default=1)
+    in_stock_total = models.IntegerField(default=1)
+    is_active = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("products",kwargs={})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return reverse("products", kwargs={})

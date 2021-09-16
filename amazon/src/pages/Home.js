@@ -1,8 +1,8 @@
 import React from 'react'
-import './css/Home.css'
-import MyCarousel from './MyCarousel';
-import Product from './Product';
-import Category from './Category';
+import '../css/Home.css'
+import MyCarousel from '../components/MyCarousel';
+import Product from '../components/Product';
+import Category from '../components/Category';
 
 export default function Home() {
     return (

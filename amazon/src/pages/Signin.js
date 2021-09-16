@@ -1,10 +1,10 @@
 import React,{useState,useRef} from 'react'
-import './css/Signin.css'
-import logo from './images/amazon-logo.jpg'
+import '../css/Signin.css'
+import logo from '../images/amazon-logo.jpg'
 import { Link} from "react-router-dom";
 import validator from 'validator'
 import axios from 'axios';
-import {useContextValue} from './ContextProvider'
+import {useContextValue} from '../ContextProvider'
 import { useHistory } from "react-router-dom";
 
 export default function Signin() {

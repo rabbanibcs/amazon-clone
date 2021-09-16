@@ -274,3 +274,29 @@ input::placeholder{
 	top: 0;
 	z-index: 100;
 }
+.user_header{
+display:flex;
+}
+.login_error{
+	color: red;
+	font-size: 25px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

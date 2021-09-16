@@ -1,6 +1,6 @@
-import './css/CartItem.css';
+import '../css/CartItem.css';
 import React from 'react'
-import { useContextValue } from './ContextProvider';
+import { useContextValue } from '../ContextProvider';
 import {useParams,Link} from "react-router-dom";
 
 export default function CartItem({image, title, price,stock,size,color,setCart,proId}) {

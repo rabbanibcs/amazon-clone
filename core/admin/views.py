@@ -1,11 +1,19 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.shortcuts import reverse
 from django.contrib.auth import logout
 from .models import CustomerUser, MerchantUser, StaffUser, AdminUser, CustomUser
 from rest_framework.authtoken.models import Token
+from amazon.models import Categories, SubCategories, Products
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def home(request):
+    subcat = SubCategories.objects.all()
+    return render(request, 'admin/home.html', {'subcategories': subcat})
 
 
 def sign_up(request):
@@ -17,13 +25,18 @@ def admin_login(request):
 
 
 def login_success(request):
-    email = request.POST.get('email')
-    password = request.POST.get('password')
-    user = authenticate(email=email, password=password)
-    if user:
-        return HttpResponseRedirect(reverse('admin_home'))
+    if request.method=='POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request,email=email, password=password)
+        if user:
+            # attach to the current session 
+            login(request, user)
+            return HttpResponseRedirect(reverse('admin_home'))
+        else:
+            messages.error(request, 'Invalid Credentials')
+            return HttpResponseRedirect(reverse('admin_login'))
     else:
-        messages.error(request, 'Invalid credentials')
         return HttpResponseRedirect(reverse('admin_login'))
 
 
@@ -31,15 +44,10 @@ def admin_logout(request):
     logout(request)
     return redirect('admin_login')
 
-
-def home(request):
-    return render(request, 'admin/home.html')
-
-
 def calender(request):
     return render(request, 'admin/calendar.html')
 
-
+@login_required
 def all_users(request):
     users = CustomUser.objects.all()
 
@@ -48,9 +56,9 @@ def all_users(request):
         print(Token.objects.get_or_create(user=user))
 
     return render(request, 'admin/users.html', {'users': users})
-
-
-def delete_user(request,pk):
+    
+@login_required
+def delete_user(request, pk):
     user = CustomUser.objects.get(pk=pk)
     user.delete()
     return redirect('users')

@@ -1,4 +1,4 @@
-import './css/Product.css'
+import '../css/Product.css'
 import React from 'react'
 
 export default function Product({src,title}) {

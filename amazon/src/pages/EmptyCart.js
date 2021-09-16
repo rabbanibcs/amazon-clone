@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/EmptyCart.css'
+import '../css/EmptyCart.css'
 
 export default function EmptyCart() {
     return (
