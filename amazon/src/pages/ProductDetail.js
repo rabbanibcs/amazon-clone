@@ -4,36 +4,31 @@ import StarIcon from '@material-ui/icons/Star';
 import {useParams} from "react-router-dom";
 import axios from 'axios';
 import { useContextValue } from '../ContextProvider';
+import {getProductsFromSessionStorage,calculateTotalCartItems,setPorductsSession} from '../helpers';
 
 export default function ProductDetail() {
     const [product, setProduct] = useState({})
     const [rating, setRating] = useState(2)
     const {setCartTotal}=useContextValue()
+    const [quantity,setQuantity]=useState(1)
 
     const {proid} = useParams()
     
-    // const handleCart=()=>{
-    //     var products =JSON.parse(window.sessionStorage.getItem('products'))
-    //     // !products && window.sessionStorage.setItem('products' , JSON.stringify(product))
-    //     var productExists= products?.filter((item)=>(item.id==proid))
-    //     // productExists.length == 0 ? products?.push(product) :alert('This product already exists in your Cart.')
-    //     !products? products.push(product) :alert('This product already exists in your Cart.')
-    //     window.sessionStorage.setItem('products' , JSON.stringify(products))
-    //     setCartTotal(products?.length);
-
-    // }
-    const handleCart=()=>{
+    const handleCart=(e)=>{
+        e.target.style.backgroundColor = "white"
         try{
-            var products =JSON.parse(window.sessionStorage.getItem('products'))
-            var productExists= products.filter((item)=>(item.id==proid))
+            var products =getProductsFromSessionStorage()
+            var productExists= products?.filter((item)=>(item.id==proid))
             productExists.length == 0 ? products?.push(product) :alert('This product already exists in your Cart.')
-            window.sessionStorage.setItem('products' , JSON.stringify(products))
-            setCartTotal(products?.length);
+            setPorductsSession(products)
+            products &&  setCartTotal(calculateTotalCartItems(products))
+            
 
         }catch {
-            
             window.sessionStorage.setItem('products' , JSON.stringify([product]))
             setCartTotal(1);
+            console.log(JSON.stringify([product]))
+
         }
        
     }
@@ -45,15 +40,14 @@ export default function ProductDetail() {
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000/api/product/${proid}/`)
-            .then(res=>{setProduct(res.data)
+            .then(res=>{setProduct({...res.data,'quantity':quantity})
                         setRating(res.data.rating)
             })
             .catch((err)=>console.log(err));
-    }, [proid])
+    }, [proid,quantity])
 
     return (
         <div className='detail'>
-            
             <div className="detail__left">
                 <img src={product.image_url} alt="sorry, Not available" />
             </div>
@@ -65,14 +59,14 @@ export default function ProductDetail() {
                     ))}
                 </p>
                 <p>Price: ${product.price}</p>
-                <p>Size: <strong>10 Feet</strong></p>
+                {/* <p>Size: <strong>10 Feet</strong></p> */}
 
-                <div className="sizes">
+                {/* <div className="sizes">
                 <p>Size: <strong>3 Feet</strong></p>
                 <p>Size: <strong>6 Feet</strong></p>
                 <p>Size: <strong>10 Feet</strong></p>
 
-                </div>
+                </div> */}
                 <h6>About this Item</h6>
                 <p>{product.product_description}</p>
             </div>
@@ -89,9 +83,9 @@ export default function ProductDetail() {
             </p>
             <div className='detail__right__select'>
                 <p>Qty:</p>
-            <select className='quantity' name="quantity" value='Qun:'>
+            <select className='quantity' name="quantity" onChange={(e)=>{setQuantity(e.target.value)}}>
             {Array(30).fill().map((_,i)=>(
-                <option value={i+1}>{i+1}</option>
+                <option key={i} value={i+1}>{i+1}</option>
 
             ))}
             </select>

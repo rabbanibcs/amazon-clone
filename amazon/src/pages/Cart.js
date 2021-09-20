@@ -2,13 +2,14 @@ import '../css/Cart.css';
 import React,{useLayoutEffect,useState} from 'react'
 import CartItem from '../components/CartItem';
 import { useContextValue } from '../ContextProvider';
+import {getProductsFromSessionStorage} from '../helpers';
 
 export default function Cart() {
     const [cart, setCart] = useState()
     const {totalPrice,cartTotal}=useContextValue()
     
     useLayoutEffect(()=>{    
-        const products =JSON.parse(window.sessionStorage.getItem('products'))
+        const products =getProductsFromSessionStorage()
         setCart(products)
     
       },[setCart])
@@ -19,7 +20,10 @@ export default function Cart() {
                 <h3>Shopping Cart</h3>
                 <h6>Price</h6>
                 {cart && cart.map((product)=>(
-                    <CartItem setCart={setCart}
+                    <CartItem 
+                    key={product.id}
+                    qty={product.quantity}
+                    setCart={setCart}
                     proId={product.id}
                     image={product.image_url} 
                     price={product.price} size="3" color="white" title={product.title}/>

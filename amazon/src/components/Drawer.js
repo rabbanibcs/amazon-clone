@@ -13,9 +13,6 @@ export default function Drawer({open,controlDrawer}) {
         axios.get('http://127.0.0.1:8000/api/categories/')
             .then(res=>setCategories(res.data))
             .catch((err)=>console.log(err));
-        // console.log(categories);
-
-        
     },[])
     return (
         <div>
@@ -33,7 +30,6 @@ export default function Drawer({open,controlDrawer}) {
                         <Link key={value.id} onClick={controlDrawer} className='drawer__link' to={`/products/${value.id}`}><p>{value.title}</p></Link>
                     ))}
                 </div>
-                
             </div>
             </MyDrawer> 
         </div>

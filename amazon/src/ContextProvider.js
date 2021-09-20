@@ -1,4 +1,5 @@
 import React, {useState,createContext,useContext,useEffect} from 'react'
+import {getProductsFromSessionStorage,calculateTotalPrice,calculateTotalCartItems} from './helpers';
 
 export const Context= createContext()
 
@@ -8,12 +9,10 @@ export const ContextProvider=({children})=>{
     const [currentUser,setCurrentUser]=useState({})
     
     useEffect(() => {
-        var priceArray=[]
-            const products =JSON.parse(window.sessionStorage.getItem('products'))
-            products &&  setCartTotal(products.length)
-            priceArray = products?.map((product)=>parseFloat(product.price))
-            setTotalPrice(priceArray?.reduce((a,b)=>a+b,0))
-        })
+            const products = getProductsFromSessionStorage()
+            products &&  setCartTotal(calculateTotalCartItems(products))
+            products &&  setTotalPrice(calculateTotalPrice(products))
+        },[])
     useEffect(() => {
         try{
             const user =JSON.parse(window.sessionStorage.getItem('user'))
@@ -21,7 +20,7 @@ export const ContextProvider=({children})=>{
         }catch{
             console.log('your are not signed in')
         }
-    })
+    },[])
     const value={
         cartTotal,
         setCartTotal,

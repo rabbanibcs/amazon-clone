@@ -10,7 +10,6 @@ export default function Products() {
     const [subcategoyProducts, setSubcategoyProducts] = useState([])
     var products=[];
     var n=0;
-    var x=0;
 
     const {catid} = useParams()
     const {subid} = useParams()
@@ -53,17 +52,17 @@ export default function Products() {
                     products.push(product)
                     if(products.length%4===0){
                         n=products.length
-                        return <div key={n} className="products__row">
-                            <OnePro key={n-4} proId={products[n-4].id} src={products[n-4].image_url} 
+                        return <div  className="products__row">
+                            <OnePro key={products[n-4].id} proId={products[n-4].id} src={products[n-4].image_url} 
                             title={products[n-4].title}
                             price={products[n-4].price} rating={products[n-4].rating} />
-                            <OnePro key={n-3} proId={products[n-3].id} src={products[n-3].image_url} 
+                            <OnePro key={products[n-3].id} proId={products[n-3].id} src={products[n-3].image_url} 
                             title={products[n-3].title}
                             price={products[n-3].price} rating={products[n-3].rating} />
-                            <OnePro key={n-2} proId={products[n-2].id} src={products[n-2].image_url} 
+                            <OnePro key={products[n-2].id} proId={products[n-2].id} src={products[n-2].image_url} 
                             title={products[n-2].title}
                             price={products[n-2].price} rating={products[n-2].rating} />
-                            <OnePro key={n-1} proId={products[n-1].id} src={products[n-1].image_url} 
+                            <OnePro key={products[n-1].id} proId={products[n-1].id} src={products[n-1].image_url} 
                             title={products[n-1].title}
                             price={products[n-1].price} rating={products[n-1].rating} />
                         </div>

@@ -7,9 +7,7 @@
 
 .detail__left{
     flex: 3;
-    /* border-bottom: 1px solid #ddd; */
-
-    /* height: 80vh; */
+    
     margin-top: 100px;
 }
 .detail__left>img{
